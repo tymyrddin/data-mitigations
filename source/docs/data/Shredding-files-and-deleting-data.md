@@ -1,6 +1,6 @@
 # Shredding files and deleting data (Linux)
 
-Even when you erase everything on your hard disk, sometimes it is possible to recover (pieces of) data with forensics software and/or hardware. If that data is confidential, delete files and data securely so that no-one will recover them. Solid State Drives (SSD) may have introduced dramatic changes to the principles of computer forensics, in particular for [recovering files and partitions](https://tymyrddin.wiki/forensics/recovery) ...
+Even when you erase everything on your hard disk, sometimes it is possible to recover (pieces of) data with forensics software and/or hardware. If that data is confidential, delete files and data securely so that no-one will recover them. Solid State Drives (SSD) may have introduced dramatic changes to the principles of computer forensics, in particular for recovering files and partitions.
 
 When encrypting and compressing files, clear-text versions that existed before you compress/encrypt the file or clear-text copies that are created after you decrypt/decompress it remain on your hard drive. There may also be "temp" files left behind. Unless you purge — not just delete — those clear-text files.
 

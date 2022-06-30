@@ -1,8 +1,8 @@
 # Digital mixing
 
-In the eighties, digital mixes (sometimes called mix networks or mixnets) to achieve a higher level of anonymity with personal communication appeared. Digital mixing uses a similar system as routing but it adds several layers in the connection between the sender and receiver of the communication. The layers are created using public key cryptography. Using digital mixing is comparable to sending a letter encased in four envelopes pre-addressed and pre-stamped with a small message reading, [please remove this envelope and repost](https://tymyrddin.wiki/theatre/mixnets).
+In the eighties, digital mixes (sometimes called mix networks or mixnets) to achieve a higher level of anonymity with personal communication appeared. Digital mixing uses a similar system as routing, but it adds several layers in the connection between the sender and receiver of the communication. The layers are created using public key cryptography. Using digital mixing is comparable to sending a letter encased in four envelopes pre-addressed and pre-stamped with a small message reading, please remove this envelope and repost.
 
-Note: //Mixnets are not designed to disguise the fact that you are using a mix network. If an adversary can simply lock you up for using anonymity tools, you need to disguise your use of anonymity tools.//
+Note: Mixnets are not designed to disguise the fact that you are using a mix network. If an adversary can simply lock you up for using anonymity tools, you need to disguise your use of anonymity tools.
 
 ![Channel encryption](../../_static/images/channel-encryption.png)
 

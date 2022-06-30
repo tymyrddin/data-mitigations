@@ -13,7 +13,7 @@ Passwords were the first mechanisms used for authenticating users on timeshared 
 
 ## Auditing passwords
 
-Try your hand at [cracking your own (current and new) passwords](https://tymyrddin.github.io/attack-trees/docs/crypto/Brute-force.html). 
+Try your hand at [cracking your own (current and new) passwords](attack-trees:docs/crypto/Brute-force). 
 
 ## Choosing a password manager
 

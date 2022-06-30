@@ -25,7 +25,7 @@ Line is operated by Line Corporation, a subsidiary of Korean internet search eng
 
 Line is one of the most widely-deployed messaging applications, especially in Japan, Taiwan, Thailand and Indonesia in governmental, banking, payment, shopping, and music service applications. Line uses //Letter Sealing//, for a pairwise secure communication between the end users. Its specification was initially not public, but some reverse engineering resulted in a whitepaper describing the high-level specification. 
 
-It consists of key generation and registration, client-to-client key exchange (using the ECDH protocol), and message encryption phases. There seems to be a lack of forward secrecy and the feasibility of a [replay attack](https://tymyrddin.github.io/e2ee-threat-model/docs/attacks/Replay-attack.html).
+It consists of key generation and registration, client-to-client key exchange (using the ECDH protocol), and message encryption phases. There seems to be a lack of forward secrecy and the feasibility of a [replay attack](e2ee-threat-model:docs/attacks/Replay-attack).
 
 Line seems to also conform to censorship requirements by governments:
 * In China, Line suppresses content to conform with government censorship. Accounts registered with Chinese phone numbers download a list of banned words that cannot be sent or received through Line.
