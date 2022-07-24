@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using cryptsetup &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using removable storage media" href="Using-removable-storage-media.html" />
+    <link rel="prev" title="Shredding files and deleting data (Linux)" href="Shredding-files-and-deleting-data.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Data mitigations
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Using cryptsetup</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/data/Using-cryptsetup.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-cryptsetup">
+<h1>Using cryptsetup<a class="headerlink" href="#using-cryptsetup" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://gitlab.com/cryptsetup/cryptsetup">Cryptsetup</a> is a utility used to setup disk encryption based the on <code class="docutils literal notranslate"><span class="pre">dm-crypt</span></code> kernel module. LUKS (Linux Unified Key Setup) is the standard for Linux hard disk encryption, facilitating compatibility among distributions, and providing secure management of multiple user passwords.</p>
+<section id="installing-cryptsetup">
+<h2>Installing cryptsetup<a class="headerlink" href="#installing-cryptsetup" title="Permalink to this heading"></a></h2>
+<p>As root (on debian and its derivatives):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># apt-get install cryptsetup
+</pre></div>
+</div>
+</section>
+<section id="find-drive">
+<h2>Find drive<a class="headerlink" href="#find-drive" title="Permalink to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># fdisk -l
+</pre></div>
+</div>
+<p>Example:</p>
+<p><img alt="Using drive" src="../../_images/fdisk-l.png" /></p>
+<p>It has found <code class="docutils literal notranslate"><span class="pre">/dev/sdb1</span></code>, my external drive.</p>
+</section>
+<section id="wipe-drive">
+<h2>Wipe drive<a class="headerlink" href="#wipe-drive" title="Permalink to this heading"></a></h2>
+<p>If it is a new drive there was no previous sensitive data on it. If it is a disk that contained an encrypted volume, previous sensitive data is encrypted and sensitive data is not directly readable. In both cases you can continue with creating an encrypted volume</p>
+<p>If you previously had unencrypted sensitive data on the drive, you need to do something to obscure that data. Deleting it is not enough. Drives can be wiped with <code class="docutils literal notranslate"><span class="pre">dd</span></code> which overwrites it with zeros (quick) or random data (more secure, but it takes a whole night for example for a 120G drive). You can overwrite a partition, or overwrite the entire drive (you will have to repartition the drive afterward).</p>
+<p>To overwrite an entire drive, leave off the partition number of the device name (that you found with fdisk) in one of the following <code class="docutils literal notranslate"><span class="pre">dd</span></code> commands (use output file <code class="docutils literal notranslate"><span class="pre">of=/dev/sd*</span></code> instead of <code class="docutils literal notranslate"><span class="pre">/dev/sd*1</span></code>).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># dd if=/dev/zero of=/dev/sdb1
+</pre></div>
+</div>
+<p>or
+# dd if=/dev/urandom of=/dev/sdb1</p>
+</section>
+<section id="create-encrypted-volume">
+<h2>Create encrypted volume<a class="headerlink" href="#create-encrypted-volume" title="Permalink to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># cryptsetup luksFormat /dev/sdb1
+</pre></div>
+</div>
+<p>Enter a passphrase when asked.</p>
+<p>Open the encrypted volume:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># cryptsetup luksOpen /dev/sdb1 &lt;name&gt;
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> is a temporary name you pick (no special characters or spaces). Closing the volume removes the name.
+Creating filesystem</p>
+<p>For creating an <code class="docutils literal notranslate"><span class="pre">ext4</span></code> filesystem:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># mke2fs -t ext4 /dev/mapper/&lt;name&gt;
+</pre></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">ext2</span></code> for a small drive.</p>
+</section>
+<section id="mount-drive">
+<h2>Mount drive<a class="headerlink" href="#mount-drive" title="Permalink to this heading"></a></h2>
+<p>If your partition has no label, it will be mounted in <code class="docutils literal notranslate"><span class="pre">/media/UUID</span></code>, where <code class="docutils literal notranslate"><span class="pre">UUID</span></code> refers to the <code class="docutils literal notranslate"><span class="pre">UUID</span></code> of the partition.</p>
+<p>For mounting linux drives:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># mount /dev/mapper/&lt;name&gt; /mnt
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">/mnt</span></code> can be any mount point you choose.</p>
+</section>
+<section id="own-it">
+<h2>Own it<a class="headerlink" href="#own-it" title="Permalink to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># chown -R [user] /mnt
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">[user]</span></code> is your user name.</p>
+</section>
+<section id="unmount-drive">
+<h2>Unmount drive<a class="headerlink" href="#unmount-drive" title="Permalink to this heading"></a></h2>
+<p>Unmount drive and close the encrypted volume:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># umount /mnt</span>
+<span class="c1"># cryptsetup luksClose &lt;name&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="using-drive">
+<h2>Using drive<a class="headerlink" href="#using-drive" title="Permalink to this heading"></a></h2>
+<p><img alt="Using drive" src="../../_images/volume.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Shredding-files-and-deleting-data.html" class="btn btn-neutral float-left" title="Shredding files and deleting data (Linux)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Using-removable-storage-media.html" class="btn btn-neutral float-right" title="Using removable storage media" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

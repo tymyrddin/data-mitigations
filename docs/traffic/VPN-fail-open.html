@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fail open &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Email" href="../email/README.html" />
+    <link rel="prev" title="Choosing a VPN" href="VPN.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Data mitigations
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data/README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Fail open</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/traffic/VPN-fail-open.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fail-open">
+<h1>Fail open<a class="headerlink" href="#fail-open" title="Permalink to this heading"></a></h1>
+<p>If you simply add a VPN using common instructions, it generally //fails open//. That means, if the VPN breaks down, because the connection is interrupted, traffic will be sent without the VPN. It is much safer when it //fails closed//, meaning that when the VPN connection breaks down, the whole internet connection must be down as long as the VPN connection is not restored.</p>
+<section id="use-a-firewall">
+<h2>Use a firewall<a class="headerlink" href="#use-a-firewall" title="Permalink to this heading"></a></h2>
+<p>As an example, <code class="docutils literal notranslate"><span class="pre">ufw</span></code> can be set up as a fail safe mechanism (aka kill switch).</p>
+<p>Set all traffic to deny:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo ufw default deny outgoing
+$ sudo ufw default deny incoming
+</pre></div>
+</div>
+<p>Permit OpenVPN traffic (if using OpenVPN adapter is probably tun0 but check.)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo ufw allow out on tun0 from any to any
+</pre></div>
+</div>
+<p>For added security you may want to keep incoming traffic disabled but if desired or required then allow it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo ufw allow in on tun0 from any to any
+</pre></div>
+</div>
+<p>With this rule all non VPN traffic (and subsequently DNS requests not routed though VPN) will be blocked.</p>
+<p>But, this set up requires that you disable the firewall to connect to the VPN and then enable it once connection is made. To allow establishment of a connection to the VPN server even when the firewall is enabled:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo ufw allow out from any to [VPN server IP address]
+</pre></div>
+</div>
+<p>Add multiple rules for all VPN servers you will be using. If you want more strict rules and better security then only allow desired ports on tun0.</p>
+</section>
+<section id="vpnfirewall-script">
+<h2>VPNfirewall script<a class="headerlink" href="#vpnfirewall-script" title="Permalink to this heading"></a></h2>
+<p>The <a class="reference external" href="https://github.com/adrelanos/VPN-Firewall">VPNfirewall script by Adrelanos</a></p>
+<ul class="simple">
+<li><p>Forbids outgoing traffic after the VPN software broke down for some reason.</p></li>
+<li><p>Has tight firewall rules, using iptables policy drop.</p></li>
+<li><p>Only tested with OpenVPN. Should work with other VPN clients such as PPTP in theory, you should test if it does what it claims anyway.</p></li>
+<li><p>Only tested on Debian Wheezy and Whonix. Should work on any other Linux distribution in theory, you should test if it does what it claims.</p></li>
+<li><p>Is Open Source / Free Software</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="VPN.html" class="btn btn-neutral float-left" title="Choosing a VPN" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../email/README.html" class="btn btn-neutral float-right" title="Email" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

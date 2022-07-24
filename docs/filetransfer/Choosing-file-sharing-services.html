@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choosing file sharing services &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Uploading files to a server" href="Uploading-files-to-a-server.html" />
+    <link rel="prev" title="Checking integrity of downloads (Linux)" href="Checking-integrity-of-downloads.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Data mitigations
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data/README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Choosing file sharing services</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/filetransfer/Choosing-file-sharing-services.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="choosing-file-sharing-services">
+<h1>Choosing file sharing services<a class="headerlink" href="#choosing-file-sharing-services" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://transparencyreport.google.com/">Google Drive</a> and <a class="reference external" href="https://www.dropbox.com/transparency/reports">Dropbox</a> are probably not really private. The problem with their privacy policies and terms of service is not that they are malicious - they’re there to help provide the service, but that they could be misused easily. There is no language that compels either to act in a user’s interest. Alternatives that do use such language exist.</p>
+<section id="comparitech-research">
+<h2>Comparitech research<a class="headerlink" href="#comparitech-research" title="Permalink to this heading"></a></h2>
+<p>Update December 2021 : A <a class="reference external" href="https://www.comparitech.com/blog/vpn-privacy/tech-giant-censorship/">yearly study by Comparitech</a> looks at the number of content removal requests by platform, which countries have the highest rates of content removal per 100,000 internet users, and how things change on a year-by-year basis. The question Comparitech focuses on is “Which government censors the tech giants the most?”</p>
+</section>
+<section id="dropbox">
+<h2>Dropbox<a class="headerlink" href="#dropbox" title="Permalink to this heading"></a></h2>
+<p>Edward Snowden has warned against the cloud storage service Dropbox which he says is <a class="reference external" href="https://www.theguardian.com/world/video/2014/jul/17/edward-snowden-video-interview">hostile to privacy</a>, and called for more services to offer the //zero knowledge// which have no decrypted access to user data.</p>
+<p>//”They just put … Condoleezza Rice on their board… who is probably the most anti-privacy official you can imagine. She’s one of the ones who oversaw Stellar Wind and thought it was a great idea. Another indicator they are indeed hostile to privacy.”//</p>
+</section>
+<section id="google-drive">
+<h2>Google drive<a class="headerlink" href="#google-drive" title="Permalink to this heading"></a></h2>
+<p>Google Drive is one of the most widespread cloud-storage services around, but between the National Security Agency (NSA) and Google’s own overreaching terms of service, your files may be open to snooping from both organizations. [[https://venturebeat.com/2013/06/19/google-issues-clearest-statement-yet-on-nsa-and-prism-no-server-access-no-back-door-no-drop-box-no-free-for-all/|Google denies]] granting the NSA unlimited access to private data.</p>
+<p>Google provides a browser, email, a search engine and global navigation and supposedly PRISM can collect information from any of these services as well as from Google Drive, the cloud-storage platform. Drive has two components: Create and Upload.</p>
+<p><a class="reference external" href="https://www.google.com/policies/privacy/">Google’s privacy policy</a> states that Google can collect device, login and location information, and in case of Chrome, also collects browser history, plants cookies and records what other applications were used.</p>
+<p>The Google Drive FAQ says the company will not use any data you mark as private for marketing or promotional purposes, but according to its terms of service (Your Content in our Services) Google can //use, host, store, reproduce, modify, create derivative works (such as those resulting from translations, adaptations or other changes we make so that your content works better with our Services) communicate, publish, publicly perform, publicly display and distribute such content.//</p>
+</section>
+<section id="onionshare">
+<h2>Onionshare<a class="headerlink" href="#onionshare" title="Permalink to this heading"></a></h2>
+<p>An alternative, especially when distributing unauthorised content is <a class="reference external" href="https://docs.onionshare.org/2.3.1/en/">https://github.com/micahflee/onionshare/wiki|Onionshare</a>, which allows for sending big files via Tor. When sharing a file, the program creates a Tor Hidden Service — a temporary, anonymous website — hosted on your computer. Give the intended recipient of the file the .onion address for that site, and they can securely and anonymously download it through their Tor Browser.</p>
+</section>
+<section id="sparkleshare">
+<h2>Sparkleshare<a class="headerlink" href="#sparkleshare" title="Permalink to this heading"></a></h2>
+<p>Another alternative is <a class="reference external" href="https://www.sparkleshare.org/">Sparkleshare</a>. SparkleShare was made to cover <a class="reference external" href="https://github.com/hbons/SparkleShare/wiki">certain use cases</a> (designers at the  GNOME Usability Hackfest in London came to the conclusion that they didn’t have a good (Open Source) collaboration tool to share their work), but doesn’t handle every scenario well. It is not suited for full computer backups and large binary files that change often, like video editing projects.</p>
+<p>Once its setup, it is as easy to use as Dropbox, but setting it up takes a bit more work than Dropbox. It builds upon two software packages well known for security and reliability: git and ssh, and works with Tor Hidden Services. It runs on Windows, Mac OS X, and GNU/Linux, and an Android client is in the works.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Checking-integrity-of-downloads.html" class="btn btn-neutral float-left" title="Checking integrity of downloads (Linux)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Uploading-files-to-a-server.html" class="btn btn-neutral float-right" title="Uploading files to a server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

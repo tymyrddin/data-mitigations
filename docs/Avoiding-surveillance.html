@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avoiding surveillance &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Circumventing censorship" href="Circumventing-censorship.html" />
+    <link rel="prev" title="Personal data mitigation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Data mitigations
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="traffic/README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data/README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="metadata/README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata/BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata/Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata/MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata/Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Avoiding surveillance</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/docs/Avoiding-surveillance.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="avoiding-surveillance">
+<h1>Avoiding surveillance<a class="headerlink" href="#avoiding-surveillance" title="Permalink to this heading"></a></h1>
+<p>The Snowden leaks revealed a massive surveillance program including interception of email and other internet communications and phone call tapping. Upstream collection, Hemisphere and XKeyScore by way of wealthycluster2 gobble up our metadata, and with interconnected systems such as by ICReach that data can be shared and associated with other data. There are dozens of clever analyses that can be performed with such linked databases. I’m sure that is what they’re doing right now. If I can think of it, so did they.</p>
+<p>And it is not just the US spying on its citizens and its “adversaries”. Every citizen on this planet is subject to dragnet surveillance. This includes data that does not, by itself, identify individuals, but sits in various databases until analysts do a search for a particular name.</p>
+<section id="what-tools-to-use">
+<h2>What tools to use?<a class="headerlink" href="#what-tools-to-use" title="Permalink to this heading"></a></h2>
+<p>Just a getting started … As with anonymising traffic, it depends on where you are, what the state adversary makes available in terms of resources and what the consequences of discovery in your country may be.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Assets</th>
+<th style="text-align: left;">Threat(s)</th>
+<th style="text-align: left;">Mitigation(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Communications</td>
+<td style="text-align: left;">Nearly all states are copying and searching the communications (for example email addresses) and content of virtually every communication that comes into or goes out of the country, without a warrant.</td>
+<td style="text-align: left;">Use encryption. Intelligence agencies target encrypted traffic, but any encryption is still better than sending traffic in the clear.</td>
+</tr>
+<tr>
+<td>Encryption software</td>
+<td style="text-align: left;">Be suspicious of commercial encryption software, especially from large vendors: The secret agreements between intelligence agencies and technology companies extends to those developing security and encryption software.(For avoiding implicitly backdoored algorithms: Try to use public-domain encryption that has to be compatible with other implementations as much as possible: Do not use proprietary software; Avoid elliptic-curve systems.)</td>
+<td style="text-align: left;">Assume that every commercial application has a <a href="e2ee-threat-model:docs/attack-vectors/Backdoor">backdoor</a> and that <a href="e2ee-threat-model:docs/attack-vectors/Ghost-protocols.md">ghost protocols</a> exist.</td>
+</tr>
+<tr>
+<td>IP address</td>
+<td style="text-align: left;">Packet headers identify the IP addresses of sender(s) and recipient(s) and the packet routes can rather easily be tracked.</td>
+<td style="text-align: left;">Use <a href="traffic/Tunnelling.md">tunnelling</a> (<a href="traffic/VPN.md">VPN</a> or <a href="traffic/SSH.md">SSH</a> or <a href="traffic/Tor.md">Tor</a>) and when doing so never ever post any personal data. Communications can be encrypted so that an observer cannot learn the content of these transmissions easily (it will cost), but this still reveals the fact that two parties are communicating</td>
+</tr>
+<tr>
+<td>MAC address</td>
+<td style="text-align: left;">MAC addresses can be and often are used by networking equipment to track users. This means proxy hopping on a network that has already authenticated your hardware is utterly useless.</td>
+<td style="text-align: left;"><a href="traffic/Change-MAC-address.md">Regularly change mac address</a></td>
+</tr>
+<tr>
+<td>Video metadata</td>
+<td style="text-align: left;">There are two sources in which video metadata is derived: operational gathered metadata - information about the content produced, such as the type of equipment, software, date, and location; and human-authored metadata</td>
+<td style="text-align: left;">Do not add human-authored data and <a href="metadata">remove operational video and camera data</a></td>
+</tr>
+<tr>
+<td>Telecommunications metadata</td>
+<td style="text-align: left;">Information on the times, origins and destinations of phone calls, electronic messages, instant messages and other modes of telecommunication</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td>Digital photo metadata</td>
+<td style="text-align: left;">Metadata may be written into a digital photo file that will identify who owns it, copyright and contact information, what brand or model of camera created the file, along with exposure information (shutter speed, f-stop, etc.) and descriptive information, such as keywords about the photo, making the file or image searchable on a computer and/or the Internet.</td>
+<td style="text-align: left;">Do not add human-authored data and <a href="metadata">remove operational video and camera data</a></td>
+</tr>
+<tr>
+<td>Document metadata</td>
+<td style="text-align: left;">Metadata may be written into documents that will identify who owns it, copyright and contact information, and descriptive information, such as keywords, making the file searchable on a computer and/or the Internet.</td>
+<td style="text-align: left;">Do not add human-authored data and <a href="metadata">remove operational document data</a></td>
+</tr>
+<tr>
+<td>username(s)</td>
+<td style="text-align: left;">A user often has a user account and is identified to a system by a username, login name, screen name, nickname, nick or handle</td>
+<td style="text-align: left;">Regularly change user names; have a few pseudonyms (that you only use on separate (virtual) machines)</td>
+</tr>
+<tr>
+<td>Digital identity</td>
+<td style="text-align: left;">Digital identity based on dynamic entity relationships captured from behavioural history across multiple websites and mobile apps can verify and authenticate an identity with up to 95 percent accuracy.</td>
+<td style="text-align: left;">Use <a href="traffic/Tunnelling.md">tunnelling</a> (VPN or SSH or Tor) and when doing so never ever post any personal data.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Personal data mitigation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Circumventing-censorship.html" class="btn btn-neutral float-right" title="Circumventing censorship" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

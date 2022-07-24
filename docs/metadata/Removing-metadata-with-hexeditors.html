@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Removing metadata with hex editors &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Web-applications" href="../webapplication/README.html" />
+    <link rel="prev" title="Metadata Anonymisation Toolkit (MAT)" href="MAT.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Data mitigations
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data/README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Removing metadata with hex editors</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/metadata/Removing-metadata-with-hexeditors.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="removing-metadata-with-hex-editors">
+<h1>Removing metadata with hex editors<a class="headerlink" href="#removing-metadata-with-hex-editors" title="Permalink to this heading"></a></h1>
+<p>The hexadecimal notation is almost universally used in computing - and not without a reason. There are sixteen hex digits - 0 to 9, and A to F (which correspond to decimal values 10 to 15), and each hex digit represents exactly four bits. Exactly two hex digits represent a byte, which can have a value from 00 to FF.</p>
+<p>A hex byte is the only kind of object a computer handles, and hex bytes are used to represent anything. For example, a hex byte 50 may represent the capital letter P, the processor command push eax, the decimal number 80, a colour component with 50% brightness, or whatever else lives in the digital world.</p>
+<p>And that means we have editors, hex editors, that can be used to view and change files, all files, on a very low level. As in, they can be used to remove metadata from any and all files.</p>
+<section id="usage-in-general">
+<h2>Usage in general<a class="headerlink" href="#usage-in-general" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>backup the file before using a hex editor on it.</p></li>
+<li><p>switch to ASCII mode, turn off “read only” mode, and start searching through the file.</p></li>
+</ul>
+<p><img alt="wxhexeditor" src="../../_images/wxhexeditor.png" /></p>
+<p>For example, when scrubbing pdf’s from creation and modification information look through the entire file for “created” (metadata appears in the PDF file more than once). If and when you find metadata, change to fake data or delete. Then repeat your search again for the terms “create”, “creation”, “modified”, and “modify”, and similarly either replace or delete the dates, once again being sure to repeat each search so that any potential multiple instances of the field can be located and modified or blanked out.</p>
+</section>
+<section id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this heading"></a></h2>
+<p>Windows do not have any pre-installed hex editor in their operating systems. Hex files can be stored in the text format or binary format. If you have a text-based hex file, then it can be opened with text editors like notepad. If you have a binary hex file, then the only option to open them is by using the third-party hex editing programs.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://mh-nexus.de/en/hxd/">HxD</a> Freeware Hex Editor and Disk Editor</p></li>
+<li><p><a class="reference external" href="https://www.hhdsoftware.com/free-hex-editor">Free Hex Editor Neo</a></p></li>
+</ul>
+<section id="file-properties">
+<h3>File properties<a class="headerlink" href="#file-properties" title="Permalink to this heading"></a></h3>
+<p>On windows, open file Properties in Windows Explorer for each file. In the Details tab, click “Remove Properties and Personal information”. Choose to “Remove the following properties from this file”, select which metadata to remove, and press OK. There may still be other data though.</p>
+</section>
+</section>
+<section id="mac">
+<h2>Mac<a class="headerlink" href="#mac" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://apps.tempel.org/iBored/">iBored</a> - Also windows and linux</p></li>
+</ul>
+</section>
+<section id="online">
+<h2>Online<a class="headerlink" href="#online" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://hexed.it/">Hexed.it</a> HTML5/JS =&gt; will be cached on local machine and can then be used</p></li>
+</ul>
+</section>
+<section id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/bwrsandman/Bless">bless</a> is a binary (hex) editor for the GNOME Desktop.</p></li>
+<li><p><a class="reference external" href="http://www.wxhexeditor.org/">wxhexeditor</a> is a hexadecimal file editor suitable for editing very big files. Supported file size is up to 2**64 bytes.</p></li>
+<li><p><a class="reference external" href="http://manpages.ubuntu.com/manpages/precise/man1/dhex.1.html">dhex</a> provides a console based hex edit screen with menus like Goto, Search, and HexCal</p></li>
+</ul>
+<section id="using-vi-as-hex-editor">
+<h3>Using vi as hex editor<a class="headerlink" href="#using-vi-as-hex-editor" title="Permalink to this heading"></a></h3>
+<p>It is also possible to use <code>vi</code> as a hex editor. It isn’t a real “hex mode”, what happens is that vi’s buffer is streamed through the external program xxd, but it works well for some cases of scrubbing.</p>
+<p>Open a file in vi as usual, hit escape and to switch into hex mode type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>:%!xxd
+</pre></div>
+</div>
+<p>And when done, to exit from hex mode, hit escape again and type:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>:%!xxd -r
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MAT.html" class="btn btn-neutral float-left" title="Metadata Anonymisation Toolkit (MAT)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../webapplication/README.html" class="btn btn-neutral float-right" title="Web-applications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

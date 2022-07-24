@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using rsync (Linux) &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using unison (OSX, Unix, and Windows)" href="Using-unison.html" />
+    <link rel="prev" title="Using removable storage media" href="Using-removable-storage-media.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Data mitigations
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Using rsync (Linux)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/data/Using-rsync.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-rsync-linux">
+<h1>Using rsync (Linux)<a class="headerlink" href="#using-rsync-linux" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="http://rsync.samba.org/">Rsync</a> (<strong>r</strong>emote <strong>sync</strong>) (GPL v3) is an open source utility that provides fast incremental file transfer. It is a file-copying tool which can copy locally and to/from a remote host. It offers many options to control its behaviour, and its remote-update protocol can minimize network traffic to make transferring updates between machines fast and efficient. It is widely used for backups and mirroring and as an improved copy command for everyday use. This package provides both the <code class="docutils literal notranslate"><span class="pre">rsync</span></code> command line tool and optional daemon functionality.</p>
+<section id="installing-rsync">
+<h2>Installing rsync<a class="headerlink" href="#installing-rsync" title="Permalink to this heading"></a></h2>
+<p>Installing it from the repository:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install rsync
+</pre></div>
+</div>
+</section>
+<section id="general-rsync-command">
+<h2>General rsync command<a class="headerlink" href="#general-rsync-command" title="Permalink to this heading"></a></h2>
+<p>The general command is of the form:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ rsync options source destination
+</pre></div>
+</div>
+</section>
+<section id="backup-to-external-disk">
+<h2>Backup to external disk<a class="headerlink" href="#backup-to-external-disk" title="Permalink to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">rsync</span></code>  uses an algorithm that minimises the amount of data copied by only moving the portions of files that have changed. It operates in a way similar to ssh, scp, and cp, for example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ rsync -a [directoryname]/ /media/[pathtoexternaldisk]/[directoryname]
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">a</span></code> option is a combination flag. It stands for “archive” and syncs recursively (includes all subdirectories and subdirectories of subdirectories) and preserves symbolic links, [[en:linux:files|special and device files]], modification times, group, owner, and permissions.</p>
+<p>There are a lot of different switches that you can use for <code class="docutils literal notranslate"><span class="pre">rsync</span></code> to personalize it to your specific needs, for example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-a</span></code> means recursive (recurse into directories), links (copy symlinks as symlinks), perms (preserve permissions), times (preserve modification times), group (preserve group), owner (preserve owner), preserve device files, and preserve special files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-v</span></code> means verbose and shows you what rsync is backing up.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-z</span></code> enables compression</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-h</span></code> for human-readable, output numbers in a human-readable format</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-delete</span></code> tells rsync to delete any files that are in the second directory that aren’t in the first directory.</p></li>
+</ul>
+</section>
+<section id="synchronize-files-from-local-to-remote">
+<h2>Synchronize files from local to remote<a class="headerlink" href="#synchronize-files-from-local-to-remote" title="Permalink to this heading"></a></h2>
+<p>While doing synchronization with a remote server, you need to specify <code class="docutils literal notranslate"><span class="pre">username</span></code> and <code class="docutils literal notranslate"><span class="pre">ip-address</span></code> of the remote server. You should also specify the destination directory on the remote server. The format is <code class="docutils literal notranslate"><span class="pre">username&#64;machinename:path</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ rsync -avz tymyrddin/ [username protected]@192.168.100.10:/home/tymyrddin/
+password:
+sending incremental file list
+./
+modsecurity-2.9.2.tar.gz
+[snip]
+sent 4993369 bytes  received 91 bytes  2432411.23 bytes/sec
+total size is 4991313 speedup is 2.87
+</pre></div>
+</div>
+</section>
+<section id="copy-a-remote-directory-to-a-local-machine">
+<h2>Copy a remote directory to a local machine<a class="headerlink" href="#copy-a-remote-directory-to-a-local-machine" title="Permalink to this heading"></a></h2>
+<p>In this example, a directory <code class="docutils literal notranslate"><span class="pre">/home/tymyrddin/pkgs</span></code> on a remote server is being copied in a local computer in /tmp/mypkgs.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># rsync -avzh [username protected]:/home/tymyrddin/pkgs /tmp/mypkgs
+password:
+receiving incremental file list
+created directory /tmp/mypkgs
+pkgs/
+pkgs/lighttpd_1.4.45.orig.tar.xz
+[snip]
+sent 91 bytes  received 4.99M bytes  322.16K bytes/sec
+total size is 4.99M  speedup is 1.00
+</pre></div>
+</div>
+</section>
+<section id="rsync-over-ssh">
+<h2>Rsync over ssh<a class="headerlink" href="#rsync-over-ssh" title="Permalink to this heading"></a></h2>
+<p>rsync allows you to specify the remote shell which you want to use. You can use <code class="docutils literal notranslate"><span class="pre">rsync</span> <span class="pre">ssh</span></code> to enable the secured remote connection.  To specify a protocol with rsync you need to give <code class="docutils literal notranslate"><span class="pre">-e</span></code> option with protocol name you want to use. Use <code class="docutils literal notranslate"><span class="pre">rsync</span> <span class="pre">-e</span> <span class="pre">ssh</span></code> to specify which remote shell to use. Example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># rsync -avzhe ssh [username protected]:/root/install.log /tmp/
+password:
+receiving incremental file list
+install.log
+sent 30 bytes  received 8.12K bytes  1.48K bytes/sec
+total size is 30.74K  speedup is 3.77
+</pre></div>
+</div>
+</section>
+<section id="do-not-overwrite-modified-files-at-the-destination">
+<h2>Do not overwrite modified files at the destination<a class="headerlink" href="#do-not-overwrite-modified-files-at-the-destination" title="Permalink to this heading"></a></h2>
+<p>In a typical sync situation, if a file is modified at the destination, we might not want to overwrite the file with the old file from the source. Use the <code class="docutils literal notranslate"><span class="pre">-u</span></code> option.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Using-removable-storage-media.html" class="btn btn-neutral float-left" title="Using removable storage media" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Using-unison.html" class="btn btn-neutral float-right" title="Using unison (OSX, Unix, and Windows)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

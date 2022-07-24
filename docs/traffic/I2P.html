@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I2P &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Renew IP lease" href="Renew-IP-lease.html" />
+    <link rel="prev" title="Edit hosts file" href="Edit-hosts-file.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Data mitigations
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data/README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>I2P</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/traffic/I2P.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="i2p">
+<h1>I2P<a class="headerlink" href="#i2p" title="Permalink to this heading"></a></h1>
+<p><a class="reference external" href="https://geti2p.net/en/">I2P</a> is a Distributed Peer to Peer Anonymous Network Layer that is strictly message-based. It allows you to send data between computers running I2P anonymously with multilayer end-to-end encryption. The name I2P derived from Invisible IRC Project (IIP) which was one of FreeNet’s sister projects. I2P focuses exclusively on internal communication and not on proxying to the regular internet. I2P uses so-called garlic routing which involves clumping packets together into bigger packets.</p>
+<p>The combination of garlic routing, multilayer encryption -even the end points (“destinations”) are cryptographic identifiers- and random padding on packets makes analysis of the content and detection of the origin of I2P traffic by third-party observers highly impractical if not nearly impossible.</p>
+<p>The best use for I2P is for peer to peer file sharing and communication.</p>
+<section id="garlic-routing">
+<h2>Garlic routing<a class="headerlink" href="#garlic-routing" title="Permalink to this heading"></a></h2>
+<p><a class="reference external" href="https://geti2p.net/en/docs/how/garlic-routing">Garlic routing</a> is a variant of onion routing that encrypts multiple messages together to make it more difficult for attackers to perform traffic analysis. I2P implements a packet switched routing instead of circuit switched (like Tor). Tunnels are unidirectional, and Tor’s circuits are bidirectional. I2P bundles and encrypts in three places:</p>
+<ul class="simple">
+<li><p>For building and routing through tunnels (layered encryption)</p></li>
+<li><p>For determining the success or failure of end to end message delivery (bundling)</p></li>
+<li><p>For publishing some network database entries (dampening the probability of a successful traffic analysis attack)</p></li>
+</ul>
+</section>
+<section id="tunnels">
+<h2>Tunnels<a class="headerlink" href="#tunnels" title="Permalink to this heading"></a></h2>
+<p>An I2P tunnel is a directed path through an explicitly selected list of routers. The first router that belongs to a tunnel is named gateway. The communication within a tunnel in unidirectional, this means that it is impossible to send back data without using another separated tunnel:</p>
+<ul class="simple">
+<li><p>//outbound tunnels// are those tunnels used to send messages away from the tunnel creator.</p></li>
+<li><p>//inbound tunnels// are those tunnels used to bring messages to the tunnel creator.</p></li>
+</ul>
+</section>
+<section id="routers">
+<h2>Routers<a class="headerlink" href="#routers" title="Permalink to this heading"></a></h2>
+<p>There is no rigid distinction between a server and a pure client like there is in the Tor architecture. Information transits on network routers are able to decrypt only the respective layer. The information managed by each single node is composed by the IP address of the next router and the encrypted data to transfer.</p>
+</section>
+<section id="layered-encryption">
+<h2>Layered encryption<a class="headerlink" href="#layered-encryption" title="Permalink to this heading"></a></h2>
+<p>I2P is end-to-end encrypted. No information is sent in clear or decrypted. Each node has an internal network address different from the network IP address (and is not used).</p>
+<ul class="simple">
+<li><p>During connecting (build up of tunnel) only the routing instructions for the next hop are exposed to each peer.</p></li>
+<li><p>During data transfer, messages are passed through the tunnel. Message and its routing instructions are only exposed to the endpoint of the tunnel.</p></li>
+<li><p>An additional end to end layer of encryption hides the data from the outbound tunnel endpoint and the inbound tunnel gateway.</p></li>
+<li><p>Each tunnel has an encryption layer to avoid unauthorized disclosure to peers inside the network.</p></li>
+</ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
+<p>I2P is available for Windows, Mac OS X, GNU/Linux / BSD / Solaris, Debian /Ubuntu and Android.</p>
+<p><a class="reference external" href="https://geti2p.net/en/download">Download the bundle for your device</a> and install. That easy.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Edit-hosts-file.html" class="btn btn-neutral float-left" title="Edit hosts file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Renew-IP-lease.html" class="btn btn-neutral float-right" title="Renew IP lease" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circumventing censorship &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Infosec goals" href="Infosec-goals.html" />
+    <link rel="prev" title="Avoiding surveillance" href="Avoiding-surveillance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Data mitigations
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="traffic/README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic/VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data/README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data/Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="metadata/README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata/BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata/Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata/MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metadata/Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Circumventing censorship</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/docs/Circumventing-censorship.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="circumventing-censorship">
+<h1>Circumventing censorship<a class="headerlink" href="#circumventing-censorship" title="Permalink to this heading"></a></h1>
+<p>Increasingly, states have adopted wide-scale internet blocking as a technical resource for extending their practice of information control into the online world. The answer has been the development of circumvention tools for</p>
+<ul class="simple">
+<li><p>Seeking, reading and disseminating unauthorised content</p></li>
+<li><p>Creating unauthorised content</p></li>
+<li><p>Distributing unauthorised content</p></li>
+<li><p>Leaking confidential or otherwise privileged information</p></li>
+</ul>
+<p>Internet malware can be developed and installed by governments to attack, monitor, or disrupt dissident computer systems and communication. Malware specifically targeted at a regional, racial, or language group is very difficult to intercept and identify by any anti-malware products available today and I wouldn’t put it past regimes to try to create a range of fake circumvention tools under established names.</p>
+<p>One might also expect government authorities to profile users of circumvention tools. When circumventing censorship, it is important to do this while anonymised and protected. The resources and continuous effort required to constantly evade blocking activities while remaining anonymous is not to be underestimated, and requires careful planning and implementation.</p>
+<section id="which-tools-to-use">
+<h2>Which tools to use?<a class="headerlink" href="#which-tools-to-use" title="Permalink to this heading"></a></h2>
+<p>Just a getting started … As with anonymising traffic, it depends on where you are, what the state adversary makes available in terms of resources and what the consequences of discovery in your country may be.</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">DPI</th>
+<th style="text-align: left;">Cost for censor</th>
+<th style="text-align: left;">Circumvention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP blocking</td>
+<td style="text-align: left;">A certain IP address is denied</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;"><a href="https://snowflake.torproject.org/">Find proxies that have access</a></td>
+</tr>
+<tr>
+<td>DNS filtering and redirection</td>
+<td style="text-align: left;">DNS doesn't resolve domain names or returns incorrect IP addresses</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;">Find a domain name server that resolves domain names correctly or <a href="https://skipdns.link/">bypass DNS</a> if the IP address is obtainable from other sources and is not blocked. (<a href="traffic/Edit-hosts-file.md">modify hosts file</a>) or type the IP address instead of the domain name)</td>
+</tr>
+<tr>
+<td>URL filtering</td>
+<td style="text-align: left;">Permits or denies access to specific websites based on information contained in an URL list</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;"><a href="https://www.w3schools.com/tags/ref_urlencode.asp">Use escaped characters in the URL</a>, or use encrypted protocols such as <a href="traffic/VPN.md">VPN</a> and <a href="traffic/Tor.md">Tor</a></td>
+</tr>
+<tr>
+<td>Packet filtering</td>
+<td style="text-align: left;">TCP packet transmissions are terminated when a certain number of controversial keywords are detected</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;">Use encryption, such as <a href="traffic/VPN.md">VPN</a> and <a href="traffic/Tor.md">Tor</a></td>
+</tr>
+<tr>
+<td>Man-in-the-middle attack</td>
+<td style="text-align: left;">A root certificate is replaced with a self-signed certificate in the state by its agencies</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Low</td>
+<td style="text-align: left;">Websites implementing HSTS</td>
+</tr>
+<tr>
+<td>TCP connection reset</td>
+<td style="text-align: left;">If a previous TCP connection is blocked by the filter, future connection attempts from both sides will also be blocked for up to 30 minutes. Depending on the location of the block, other users or Web sites may be also blocked if the communications are routed to the location of the block. This was used by the <a href="http://pages.cs.wisc.edu/~rist/642-spring-2014/chinafirewall.pdf">Great Firewall of China in 2007</a>. I seriously doubt is still in use.</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Ignore the reset packet sent by the firewall</td>
+</tr>
+<tr>
+<td>VPN and Tor blocking</td>
+<td style="text-align: left;">A firewall is able to "learn, discover and block" the encrypted communications methods used by a number of different VPN systems, and connection is terminated</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">High</td>
+<td style="text-align: left;">Add a form of data obfuscation (steganographic coding); <a href="https://www.torproject.org/docs/pluggable-transports.html.en">Tor: Pluggable Transports</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Avoiding-surveillance.html" class="btn btn-neutral float-left" title="Avoiding surveillance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Infosec-goals.html" class="btn btn-neutral float-right" title="Infosec goals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

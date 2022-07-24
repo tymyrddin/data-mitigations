@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit exif metadata in images &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Metadata Anonymisation Toolkit (MAT)" href="MAT.html" />
+    <link rel="prev" title="Bleachbit" href="BleachBit.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Data mitigations
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data/README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Edit exif metadata in images</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/metadata/Edit-exif-metadata-in-images.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="edit-exif-metadata-in-images">
+<h1>Edit exif metadata in images<a class="headerlink" href="#edit-exif-metadata-in-images" title="Permalink to this heading"></a></h1>
+<section id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Click right then properties on the Image file</p></li>
+<li><p>Click on the Details</p></li>
+<li><p>In this tab, at the bottom left, click on “Delete properties and personal information”</p></li>
+<li><p>Select Create a copy with all possible properties removed or you can also select Remove the following properties from this file, and select the properties you want to remove.</p></li>
+<li><p>In Origin, you can edit the Author, Data taken, Date acquired, and Copyright.</p></li>
+</ul>
+<p>For more on metadata on windows:</p>
+<ul class="simple">
+<li><p>The Details tab divides metadata properties in a number of sections, different for each file type. The image file is divided in six sections. The first section is called Description, and you can click the value field for Title, Subject, Tabs, Comments, and edit its information.</p>
+<ul>
+<li><p>Image shows relevant information about the image, all of which is automatically added an cannot be modified.</p></li>
+<li><p>The Camera section includes the details of the camera that was used to take the picture. Some of these fields can be modified.</p></li>
+<li><p>The Advanced photo section shows fields useful for photographers. Only some of the fields can be edited.</p></li>
+<li><p>File shows file name and type, location path, date created and modified, owner, and computer name where the file resides. These fields can not be edited.</p></li>
+</ul>
+</li>
+</ul>
+<section id="irfanview">
+<h3>IrfanView<a class="headerlink" href="#irfanview" title="Permalink to this heading"></a></h3>
+<p>This may become complicated if needing to remove EXIF ​​data on multiple images from a complete folder.</p>
+<p><a class="reference external" href="https://www.irfanview.com/">IrfanView</a> is a free image viewer software and photos that also gives the possibility to remove all data from an image or photo file. When saving an image, an option “Keep Original EXIF ​​data” is present. Unchecking the option removes all EXIF ​​data from the image file. Can be done in bulk. From the File&gt; Batch Conversion / rename menu, data on several image files can be deleted in one click.</p>
+</section>
+</section>
+<section id="mac">
+<h2>Mac<a class="headerlink" href="#mac" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Open Photos app on your Mac.</p></li>
+<li><p>With Photos tab selected in the left pane, rght click any thumbnail on the right and select Get Info. A window opens, showing the file name and format, camera data, and profile photos of people that Photos recognizes.</p></li>
+<li><p>Click in the window, and you can add or edit title, description, keywords and location.</p></li>
+</ul>
+<p>For more data:</p>
+<ul class="simple">
+<li><p>Open image in Finder.</p></li>
+<li><p>Click Tools &gt; Show Inspector in the top toolbar. This opens a window containing four tabs. The first tab provides summary information, and clicking on the second tab reveals 5 more tabs: General, IPTC, EXIF, JFIF and TIFF. Click on these to see all the metadata information.</p></li>
+</ul>
+<section id="exifedit">
+<h3>ExifEdit<a class="headerlink" href="#exifedit" title="Permalink to this heading"></a></h3>
+<p><a class="reference external" href="https://www.exifedit.com/for-mac/">ExifEdit</a> gives an intuitive way to edit EXIF &amp; IPTC metadata for thousands of photos in a single click.</p>
+</section>
+</section>
+<section id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this heading"></a></h2>
+<section id="exiftool">
+<h3>ExifTool<a class="headerlink" href="#exiftool" title="Permalink to this heading"></a></h3>
+<p>ExifTool is a perl program that can be used to read and edit exif metadata in images. It is available for Windows, MacOS and *nix systems.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ exiftool imagename.jpg 
+</pre></div>
+</div>
+<p>To remove, for example GPS data (not found in the above image file, but if you have it in yours) - replace image.jpg with your image file:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ exiftool -gps:all= -xmp:geotag= image.jpg
+</pre></div>
+</div>
+</section>
+<section id="imagemagick">
+<h3>imagemagick<a class="headerlink" href="#imagemagick" title="Permalink to this heading"></a></h3>
+<p>The mogrify command of imagemagick can be used to strip Exif data from images. For the same file as above and then checked with exiftool again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mogrify -strip imagename.jpg
+$ exiftool imagename.jpg
+</pre></div>
+</div>
+<p>For removing Exif data from all jpg images in a directory and all of its sub-directories recursively:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ find ./path/directory -type f -iname &#39;*.jpg&#39; | xargs mogrify -strip
+</pre></div>
+</div>
+</section>
+<section id="exiv2">
+<h3>exiv2<a class="headerlink" href="#exiv2" title="Permalink to this heading"></a></h3>
+<p>The exiv2 tool also has a command for deleting all Exif data from an image:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ exiv2 rm imagename.jpg
+</pre></div>
+</div>
+<p>For removing Exif data from all jpg images in the current directory:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ exiv2 rm *.jpg
+</pre></div>
+</div>
+<p>For removing Exif data from all jpg images in a directory and all of its subdirectories recursively:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ find ./path/directory -type f -iname &#39;*.jpg&#39; | xargs exiv2 rm
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="BleachBit.html" class="btn btn-neutral float-left" title="Bleachbit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MAT.html" class="btn btn-neutral float-right" title="Metadata Anonymisation Toolkit (MAT)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using Tor &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tunnelling" href="Tunnelling.html" />
+    <link rel="prev" title="SSH tunnels explained" href="SSH.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Data mitigations
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../data/README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Shredding-files-and-deleting-data.html">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data/Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Using Tor</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/traffic/Tor.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-tor">
+<h1>Using Tor<a class="headerlink" href="#using-tor" title="Permalink to this heading"></a></h1>
+<p>Onion routing networks like the Tor network are designed to resist a local adversary, one that can only see a subset of the network and the traffic on it. In a <a class="reference internal" href="Digital-mixing.html"><span class="doc std std-doc">(sort of) mixnet</span></a> like that, each node will only know the relay path in which it is involved, but not the whole path from the source to destination. If being discovered does not have serious consequences for you, I recommend using the <a class="reference external" href="https://www.torproject.org/download/">Tor Browser Bundle</a></p>
+<section id="warnings-taken-seriously">
+<h2>Warnings taken seriously<a class="headerlink" href="#warnings-taken-seriously" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>If a government makes their own national internet, or routes traffic through specific servers to use deep packet inspection (DPI), running Tor may not provide security if the government is able to see the entire path.</p></li>
+<li><p>Sometimes the Tor network is censored, and clients can’t connect to it. An increasing number of censoring countries are using Deep Packet Inspection (DPI) to classify Internet traffic flows by protocol. While Tor uses bridge relays to get around a censor that blocks by IP address, the censor can use DPI to recognize and filter Tor traffic flows even when they connect to unexpected IP addresses. With pluggable transports, censorship against Tor can be bypassed.</p></li>
+<li><p>Not only that. If an attacker can see your traffic, and can see the website you’re visiting, even with a path outside the adversary’s control - they will still be able to correlate the traffic and learn you are visiting the website.</p></li>
+<li><p>If the same connection (the same set of relays) were to be used for a longer period of time a Tor connection could be vulnerable to statistical analysis, which is why the client software changes the entry node every ten minutes.</p></li>
+</ul>
+</section>
+<section id="ssh-with-tor">
+<h2>SSH with Tor<a class="headerlink" href="#ssh-with-tor" title="Permalink to this heading"></a></h2>
+<p>In some countries, proving that you connected to a particular server is enough to be prosecuted, but SSH doesn’t provide a native way to obfuscate to whom it connects. For that, <a class="reference internal" href="SSH.html"><span class="doc std std-doc">SSH</span></a> with Tor (Tor proxy) can be used.</p>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h3>
+<p>Create the <code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list.d/torproxy.list</span></code> file and append:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>echo &#39;deb http://deb.torproject.org/torproject.org &lt;distribution&gt; main&#39; &gt;&gt; /etc/apt/sources.list.d/torproxy.list
+</pre></div>
+</div>
+<p>Add the <code class="docutils literal notranslate"><span class="pre">gpg</span></code> key used to sign the packages and update apt:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import
+# gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
+# apt update
+</pre></div>
+</div>
+<p>Also install <code class="docutils literal notranslate"><span class="pre">connect-proxy</span></code>, a simple relaying command to make tunnel TCP connections via SOCKS or HTTPS proxies. It is mainly intended to be used as proxy command of OpenSSH.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># apt-get install tor tor-geoipdb connect-proxy
+</pre></div>
+</div>
+</section>
+<section id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h3>
+<p>Create or open <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ vi ~/.ssh/config
+</pre></div>
+</div>
+<p>Append the below entry (replacing XXX.XXX.XXX.XXX with actual server domain name or IP and user with actual user):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Host jumphost
+HostName XXX.XXX.XXX.XXX
+User user
+CheckHostIP no
+Compression yes
+Protocol 2
+ProxyCommand connect -4 -S localhost:$orport $(tor-resolve %h localhost:$orport) %p
+</pre></div>
+</div>
+</section>
+</section>
+<section id="blocking-tor">
+<h2>Blocking Tor<a class="headerlink" href="#blocking-tor" title="Permalink to this heading"></a></h2>
+<p>Even the introduction of Bridge nodes did not stop certain organizations and governments from trying to detect and block the usage of Tor. The usual suspects for attempts at blocking Tor are:</p>
+<ul class="simple">
+<li><p>Blocking of the publicly available list of Tor relays.</p></li>
+<li><p>Creating Application Filter Policies in firewalls where only certain approved networks (LAN Networks) will be able to use specified proxy services.</p></li>
+<li><p>Creating an SSL Decryption policy in firewalls. IDS/IPS can be used to decrypt SSL certificates and detect traffic related to websites hosted on Tor.</p></li>
+<li><p>Tor browsing involves two types of ports, ORPort and DirPort. ORPorts (port 80 and 443) are used to make connections and transmissions and DirPorts (port 9001 and 9003) are used to fetch updates from the directory servers. Firewalls and IDS filters can be configured to monitor any traffic going towards or coming from the ports 9001 and 9003.</p></li>
+</ul>
+</section>
+<section id="pluggable-transports">
+<h2>Pluggable transports<a class="headerlink" href="#pluggable-transports" title="Permalink to this heading"></a></h2>
+<p>Pluggable transports are tools that Tor can use to disguise the traffic it sends out. This can be useful in situations where an Internet Service Provider or other authority is actively blocking connections to the Tor network.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">obfs3</span></code> makes Tor traffic look random, so that it does not look like Tor or any other protocol. While still included by default, it is recommended to use <code class="docutils literal notranslate"><span class="pre">obfs4</span></code> instead, as it has several security improvements over obfs3.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">obfs4</span></code> makes Tor traffic look random like <code class="docutils literal notranslate"><span class="pre">obfs3</span></code>, and also prevents censors from finding bridges by Internet scanning. obfs4 bridges are less likely to be blocked than obfs3 bridges.</p></li>
+<li><p>FTE (format-transforming encryption) disguises Tor traffic as ordinary web (HTTP) traffic.</p></li>
+<li><p>meek transports all make it look like you are browsing a major web site instead of using Tor. meek-amazon makes it look like you are using Amazon Web Services; meek-azure makes it look like you are using a Microsoft web site; and meek-google makes it look like you are using Google search.</p></li>
+<li><p>Snowflake is an improvement upon Flashproxy. It sends your traffic through WebRTC, a peer-to-peer protocol with built-in NAT punching.</p></li>
+</ul>
+</section>
+<section id="applications">
+<h2>Applications<a class="headerlink" href="#applications" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>The free Firefox-based <a class="reference external" href="https://www.torproject.org/projects/torbrowser.html">Tor Browser Bundle</a> integrates the Tor network’s enhanced privacy and security. Its installation is easy and it works out of the box.</p></li>
+<li><p><a class="reference external" href="https://guardianproject.info/apps/orbot/">Orbot</a> creates a private mobile internet connection on Android</p></li>
+<li><p><a class="reference external" href="https://onionshare.org/">OnionShare</a> is an open source tool that lets you securely and anonymously share a file of any size.</p></li>
+<li><p>The <a class="reference external" href="https://metrics.torproject.org/rs.html">relay search tool</a> displays data about single relays and bridges in the Tor network. It provides useful information on how relays are configured along with graphs about their past.</p></li>
+<li><p><a class="reference external" href="https://stem.torproject.org/">Stem</a> is a Python implementation of Tor’s directory and control specifications, a controller library that can be used to interact with Tor. With it you can write scripts and applications with capabilities similar to Vidalia and arm.</p></li>
+<li><p><a class="reference external" href="https://nyx.torproject.org/">Nyx</a> is a command-line monitor for Tor</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SSH.html" class="btn btn-neutral float-left" title="SSH tunnels explained" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Tunnelling.html" class="btn btn-neutral float-right" title="Tunnelling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

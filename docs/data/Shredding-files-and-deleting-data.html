@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shredding files and deleting data (Linux) &mdash; Data mitigations</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using cryptsetup" href="Using-cryptsetup.html" />
+    <link rel="prev" title="Managing passwords" href="Managing-passwords.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Data mitigations
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Goals</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Avoiding-surveillance.html">Avoiding surveillance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Circumventing-censorship.html">Circumventing censorship</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Infosec-goals.html">Infosec goals</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Safer browsing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/README.html">Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-configuration-editors.html">Browser configuration editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Browser-plugins.html">Browser plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Cookies.html">Cookie monsters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/FLoC.html">Federated Learning of Cohorts (FLoC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/Private-browsing.html">Private browsing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/User-agent-switchers.html">User-agent switchers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../browsing/alternatives.html">Alternative browsers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Anonymising traffic</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/README.html">Anonymising traffic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Chaining.html">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-MAC-address.html">Change MAC address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Change-nickname.html">Change nickname</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Creating-secure-VPN-with-SSH-and-tun.html">Creating a secure VPN with SSH and tun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/DNS-leaks.html">DNS leaks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Digital-mixing.html">Digital mixing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Edit-hosts-file.html">Edit hosts file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/I2P.html">I2P</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Renew-IP-lease.html">Renew IP lease</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/SSH.html">SSH tunnels explained</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tor.html">Using Tor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/Tunnelling.html">Tunnelling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN.html">Choosing a VPN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../traffic/VPN-fail-open.html">Fail open</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Email</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../email/README.html">Email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Anonymising-email.html">Anonymising email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/HIBP.html">‘;–have i been pwned?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Using-GnuPG.html">Using GnuPG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/Viewing-email-headers.html">Viewing email headers</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">E2EE messaging</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/README.html">E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Choosing-E2EE-messaging.html">Choosing E2EE messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Signal.html">Installing and using Signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../e2ee/Installing-and-using-Wire.html">Installing and using Wire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">File transfer</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/README.html">File transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Checking-integrity-of-downloads.html">Checking integrity of downloads (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Choosing-file-sharing-services.html">Choosing file sharing services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../filetransfer/Uploading-files-to-a-server.html">Uploading files to a server</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data in rest</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Protecting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Archiving-and-compressing.html">Archiving and compressing (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="File-encryption.html">File encryption</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Managing-passwords.html">Managing passwords</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Shredding files and deleting data (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-cryptsetup.html">Using cryptsetup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-removable-storage-media.html">Using removable storage media</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-rsync.html">Using rsync (Linux)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-unison.html">Using unison (OSX, Unix, and Windows)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Metadata</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/README.html">Removing metadata from files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/BleachBit.html">Bleachbit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Edit-exif-metadata-in-images.html">Edit exif metadata in images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/MAT.html">Metadata Anonymisation Toolkit (MAT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../metadata/Removing-metadata-with-hexeditors.html">Removing metadata with hex editors</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Web applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/README.html">Web-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Cookied-wps.html">Cookied Wordpresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/FloCed-sites.html">FloCed sites</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webapplication/Secure-file-transfer.html">Secure file transfer</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">All mitigations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://tymyrddin.github.io/mitigations/">Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Data mitigations</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Shredding files and deleting data (Linux)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/data/Shredding-files-and-deleting-data.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="shredding-files-and-deleting-data-linux">
+<h1>Shredding files and deleting data (Linux)<a class="headerlink" href="#shredding-files-and-deleting-data-linux" title="Permalink to this heading"></a></h1>
+<p>Even when you erase everything on your hard disk, sometimes it is possible to recover (pieces of) data with forensics software and/or hardware. If that data is confidential, delete files and data securely so that no-one will recover them. Solid State Drives (SSD) may have introduced dramatic changes to the principles of computer forensics, in particular for recovering files and partitions.</p>
+<p>When encrypting and compressing files, clear-text versions that existed before you compress/encrypt the file or clear-text copies that are created after you decrypt/decompress it remain on your hard drive. There may also be “temp” files left behind. Unless you purge — not just delete — those clear-text files.</p>
+<p>Echoes of your personal data — swap files, temp files, hibernation files, erased files, browser artifacts, etc — are likely to remain on any computer that you use to access (encrypted) data. It is a trivial task to extract those echos. A hidden access trap. Purge – not just delete – echoes.</p>
+<section id="shredding-files">
+<h2>Shredding files<a class="headerlink" href="#shredding-files" title="Permalink to this heading"></a></h2>
+<p>Linux, FreeBSD and many other *nix systems come with a command line tool called shred installed. The shred command can be useful for destroying files so that its contents are very difficult to recover, even using high-sensitivity data recovery equipment. It repeatedly overwrites the data and the associated file or device names with random data. When used without options, shred will overwrite given files or devices 25 times. A device can be a partition or an entire HDD, USB key drive, etc.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ shred [option(s)] file(s)_or_devices(s)
+</pre></div>
+</div>
+<p>For example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ shred filename1 filename2
+</pre></div>
+</div>
+<p>will shred both files, and</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ shred /dev/hda4
+</pre></div>
+</div>
+<p>will shred the fourth partition on the first HDD.</p>
+<p>By default, shred does not delete files or partitions after overwriting them. Overwritten files can be deleted by using the -u option.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ shred -u filename1 filename2
+</pre></div>
+</div>
+<p>This both frees up the disk space for other data and makes it harder to reconstruct the shredded data.</p>
+<p><code class="docutils literal notranslate"><span class="pre">shred</span></code> relies on the assumption that the filesystem overwrites data in place. But journal filesystems like //Ext3// and //ReiserFS//, RAID-based filesystems, compressed filesystems, and filesystems that cache data in temporary locations do not satisfy this assumption. Plus that copies of files can be retained in filesystem backups and on remote mirrors. Shredding partitions is therefore more reliable than shredding files.</p>
+<p>And even when shredding partitions, most HDDs map out bad sectors invisibly to application programs and utilities, and that includes shred. Sensitive data in such sectors will not be destroyed by shred.</p>
+</section>
+<section id="permanently-delete-files-including-data-in-ram-or-swap">
+<h2>Permanently delete files (including data in RAM or swap)<a class="headerlink" href="#permanently-delete-files-including-data-in-ram-or-swap" title="Permalink to this heading"></a></h2>
+<p>The Secure-Delete package comes with four commands:</p>
+<ul class="simple">
+<li><p>*<code class="docutils literal notranslate"><span class="pre">srm</span></code> - Secure remove; used for deleting files or directories currently on your hard disk</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smem</span></code> - Secure memory wiper; used to wipe traces of data from your computer’s memory (RAM)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sfill</span></code> - Secure free space wiper; used to wipe all traces of data from the free space on your disk</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sswap</span></code> - Secure swap wiper; used to wipe all traces of data from your swap partition|</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">srm</span></code> (secure remove) is a more advanced version of the shred command. It uses a combination of random data, zeros, and special values developed by cryptographer Peter Gutmann to make files irrecoverable. The <code class="docutils literal notranslate"><span class="pre">shred</span></code> tool allows you to specify the number of passes and the secure-delete tools use a default of 38 passes. It will also assign a random value for the filename, hiding that key piece of evidence:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ srm filename
+</pre></div>
+</div>
+<p>Removing a directory and all its subdirectories (recursive):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ srm -r directory/
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">smem</span></code> (secure memory wipe) removes residual traces of data that remain in memory. It is relatively easy for someone with the right tools to figure out what you had stored in RAM, which may be the contents of important files, internet activity, or whatever else it is you do with your computer. smem is slow. There are options to speed things up, but they increase risk by performing fewer overwrite passes.</p>
+<p>Invoke with:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ smem
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sfill</span></code> (secure free space wipe) wipes all the free space on your disk where past files have existed. This is particularly useful if you are getting rid of a hard disk for good; you can boot a LiveCD, delete everything on the disk, and then use sfill to make sure that nothing is recoverable (as root):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># sfill mountpoint/
+</pre></div>
+</div>
+<p>NOTE: If you have <code class="docutils literal notranslate"><span class="pre">/home/</span></code> on a separate partition and you try <code class="docutils literal notranslate"><span class="pre">/home/hilarious/mistake</span></code> as mountpoint, <code class="docutils literal notranslate"><span class="pre">sfill</span></code> will happily wipe the free space on which the mistake directory resides (the entire <code class="docutils literal notranslate"><span class="pre">/home/</span></code> partition).</p>
+<p><code class="docutils literal notranslate"><span class="pre">sswap</span></code> (secure swap wipe) wipes swap partitions. Swap partitions store data of running programs when RAM is filled up.</p>
+<p>Find your mounted swap devices by running:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ cat /proc/swaps
+</pre></div>
+</div>
+<p>Or look in your <code class="docutils literal notranslate"><span class="pre">/etc/fstab</span></code> file for filesystems of type swap. It can be <code class="docutils literal notranslate"><span class="pre">/dev/sda5</span></code> or <code class="docutils literal notranslate"><span class="pre">/dev/dm-1</span></code>, etc.</p>
+<p>Disable the swap partition:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo swapoff /dev/sda6
+</pre></div>
+</div>
+<p>Wipe:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo sswap /dev/sda6
+</pre></div>
+</div>
+<p>Re-enable swap:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ sudo swapon /dev/sda6
+</pre></div>
+</div>
+</section>
+<section id="making-deleted-data-hard-to-recover">
+<h2>Making deleted data hard to recover<a class="headerlink" href="#making-deleted-data-hard-to-recover" title="Permalink to this heading"></a></h2>
+<p>A hack that might work for sensitive data in sectors that were not destroyed by shred is towrite zeroes or random data to a file on the drive until it fills up all of the available space, then delete it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ dd if=/dev/urandom of=/path/filename1
+</pre></div>
+</div>
+<p>Then delete:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ rm /path/filename1
+</pre></div>
+</div>
+<p>This also works on partitions:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ dd if=/dev/urandom of=/dev/sda4
+</pre></div>
+</div>
+<p>Then delete</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ fdisk /dev/sda4
+Command (m for help): d
+Partition number (1-4): 4
+</pre></div>
+</div>
+</section>
+<section id="using-bleachbit-to-delete-files">
+<h2>Using bleachbit to delete files<a class="headerlink" href="#using-bleachbit-to-delete-files" title="Permalink to this heading"></a></h2>
+<p>With <a class="reference external" href="https://www.bleachbit.org/features">BleachBit</a> you can free cache, delete cookies, clear Internet history, shred temporary files, delete logs, and discard junk you didn’t know was there.</p>
+<p><img alt="Bleachbit" src="../../_images/bleachbit-system.jpg" /></p>
+<p>The version of BleachBit in the repositories of many Linux distributions is often stale, so to use the best and latest version, use <a class="reference external" href="https://www.bleachbit.org/download/linux">download</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Managing-passwords.html" class="btn btn-neutral float-left" title="Managing passwords" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Using-cryptsetup.html" class="btn btn-neutral float-right" title="Using cryptsetup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+        <a href="https://unseen-uni.netlify.app/">Unseen University</a>, 2022
+
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
